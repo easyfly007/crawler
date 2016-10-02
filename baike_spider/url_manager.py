@@ -4,7 +4,6 @@ class UrlManager(object):
 	def __init__(self):
 		self.new_urls = set()
 		self.old_urls = set()
-		print('calling UrlManager __init__')
 
 
 	def add_new_url(self, url):

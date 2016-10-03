@@ -1,5 +1,4 @@
-# coding:utf-8
-
+# -*- coding: <encoding name> -*-
 class HtmlOutputer(object):
 	def __init__(self):
 		self.datas = []
@@ -14,6 +13,9 @@ class HtmlOutputer(object):
 	def output_html(self):
 		fout = open('output.html', 'w')
 		fout.write('<html>')
+		fout.write('<head>')
+		fout.write("<meta charset='utf-8' />")
+		fout.write('</head>')
 		fout.write('<body>')
 		fout.write('<table>')
 		for data in self.datas:
@@ -21,6 +23,7 @@ class HtmlOutputer(object):
 			fout.write('<td>%s</td>' % data['url'])
 			fout.write('<td>%s</td>' % data['title'].encode('utf-8'))
 			fout.write('<td>%s</td>' % data['summary'].encode('utf-8'))
+			fout.write('</tr>')
 		fout.write('</table>')
 
 		fout.write('</body>')
